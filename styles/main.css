@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bkg-clr: hsl(217, 50%, 7%);
+  --secondary-clr: #2b3544;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --second-font:  'Rubik', sans-serif;
+
+  --font-color: rgba(255, 255, 255, 0.64);
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  line-height: 1.6;
+  font-family: var(--font-family);
+  margin: 0;
+  background-color: var(--bkg-clr);
+}
+
+header{
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-clr);
+  align-items: center;
+}
+
+svg {
+  height: 100px;
+  width: 100px;
+}
+
+svg .st1 {
+  fill: #93979d;
+}
+
+
+/* Search bar styling */
+header .search {
+  background-color: transparent;
+  border: 2px solid var(--bkg-clr);
+  border-radius: 50px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
