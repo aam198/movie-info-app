@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --bkg-color: hsl(217, 50%, 7%);
+  --primary-color: hsl(217, 50%, 7%);
   --secondary-color: #2b3544;
   --secondary-hsl: hsl(216, 23%, 22%);
 
@@ -15,7 +15,7 @@
 
   --low-rating: #FF2E00;
   --med-rating: #FFD23F;
-  --high-rating: #A9FDAC;
+  --high-rating: #a5cf4f;
 }
 
 
@@ -26,20 +26,22 @@
 }
 
 body{
+  height: 100vh;
   line-height: 1.6;
   font-family: var(--font-family);
   font-size: 1rem;
   margin: 0;
-  background-color: var(--bkg-color);
+  background-color: var(--primary-color);
 }
 
 header{
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-color);
   align-items: center;
-  height: 25vh;
+  height: auto;
+  min-height: 15vh;
   background: linear-gradient(
     to top,
     hsl(217, 50%, 7%) 0%,
@@ -66,7 +68,7 @@ svg:hover .st0 {
 /* Search bar styling */
 header .search {
   background-color: transparent;
-  border: 2px solid var(--bkg-color);
+  border: 2px solid var(--font-color);
   border-radius: 50px;
   padding: 0.7rem;
   font-size: 1rem;
@@ -77,10 +79,19 @@ header .search {
   margin-left: 10px;
 }
 
+header .search::placeholder{
+  color: rgba(255,255,255, 0.55);
+}
+
 .search:focus-visible {
   width: 400px;
   outline: 2px solid #fa9d8d;
-  background-color: var(--bkg-color);
+  background-color: var(--primary-color);
+  border: 0;
+}
+
+.search:focus-visible::placeholder{
+  color:var(--font-color);
 }
 
 main {
@@ -123,7 +134,7 @@ main {
 .movie-info span{
   color: var(--font-color);
   font-size: 1rem;
-  background-color: var(--bkg-color);
+  background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
   font-weight: 600;
