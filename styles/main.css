@@ -73,7 +73,7 @@ header .search {
   padding: 0.7rem;
   font-size: 1rem;
   color: #fff;
-  width: 200px;
+  width: 280px;
   transition: width 200ms ease-in, outline 350ms linear;
   transition-delay: 0.1s;
   margin-left: 10px;
@@ -181,3 +181,9 @@ main {
   font-size: 1.5rem;
 }
 
+/* Anything under 550 px */
+@media(max-width: 550px){
+  header .search {
+    width: 200px;
+  }
+}
