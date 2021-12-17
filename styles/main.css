@@ -99,6 +99,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  color: #fff;
 }
 
 
@@ -128,7 +129,8 @@ main {
 }
 
 .movie-info h3 {
-  margin-top: 1px;
+  margin: 1px 3px 0 0;
+  font-size: 1.3rem;
 
 }
 .movie-info span{
