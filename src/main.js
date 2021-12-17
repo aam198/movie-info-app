@@ -45,7 +45,7 @@ function showMovies(movies){
       </div>
       <div class="overview">
         <h3>Overview</h3>
-        ${overview}
+        <p>${overview}</p>
       </div>`
     // Writing to DOM
       main.appendChild(movieEl);
