@@ -1,29 +1,30 @@
-const apiKey = process.env.API_KEY;
-// Used https://www.themoviedb.org/documentation/api/discover to find endpoint for What are the most popular movies?
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=' + apiKey +'&page=1';
 
-// to get img poster path
-const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
+// Used https://www.themoviedb.org/documentation/api/discover to find endpoint for What are the most popular movies
 
-const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey +'&query="';
+const fetchMovies = async() => await (await fetch('/.netlify/functions/getmovies')).json();
 
-const search = document.getElementById('search');
-const form = document.getElementById('form');
-const main = document.getElementById('main');
+  fetchMovies().then(data => {
+    // to get img poster path
+    const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
 
-// Get initial movies
+    const search = document.getElementById('search');
+    const form = document.getElementById('form');
+    const main = document.getElementById('main');
 
-getMovies(API_URL)
+    // Get initial movies
 
-async function getMovies(url) {
-  const res = await fetch(url)
-  const data = await res.json()
+    getMovies(API_URL)
 
-  console.log(data.results)
+  async function getMovies(url) {
+    const res = await fetch(url)
+    const data = await res.json()
+
+     console.log(data.results)
   // sending the array to showMovies
-  showMovies(data.results);
+      showMovies(data.results);
 
-}
+    }
+  })
 
 function showMovies(movies){
   // To make sure main page is cleared before search results show 
@@ -66,8 +67,6 @@ function getClassByRate(vote){
   }
 
 }
-
-
 
 
 //Add event listener to form
