@@ -1,6 +1,8 @@
 
 // Used https://www.themoviedb.org/documentation/api/discover to find endpoint for What are the most popular movies
 
+const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="`;
+
 const fetchMovies = async() => await (await fetch('/.netlify/functions/getmovies')).json();
 
   fetchMovies().then(data => {
@@ -22,7 +24,6 @@ const fetchMovies = async() => await (await fetch('/.netlify/functions/getmovies
      console.log(data.results)
   // sending the array to showMovies
       showMovies(data.results);
-
     }
   })
 
