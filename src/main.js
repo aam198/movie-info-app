@@ -1,4 +1,4 @@
-const apiKey = config.API_KEY;
+const apiKey = process.env.API_KEY;
 // Used https://www.themoviedb.org/documentation/api/discover to find endpoint for What are the most popular movies?
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=' + apiKey +'&page=1';
 
