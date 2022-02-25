@@ -15,7 +15,7 @@ const fetchMovies = async() => await (await fetch('/.netlify/functions/getmovies
 
     // Get initial movies
 
-    getMovies(API_URL)
+    getMovies(URL)
 
   async function getMovies(url) {
     const res = await fetch(url)
