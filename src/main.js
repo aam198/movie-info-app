@@ -4,7 +4,7 @@
 // const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="`;
 
 const fetchMovies = async() => 
-  await (await fetch('../.netlify/functions/getmovies')).json();
+  await (await fetch('/.netlify/functions/getmovies')).json();
   // http://localhost:9000/getmovies for testing
   // /.netlify/functions/getmovies
 
