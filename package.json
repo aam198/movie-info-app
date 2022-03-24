@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "lambda-serve": "netlify-lambda serve functions",
-    "lambda-build": "netlify-lambda build functions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,8 +19,8 @@
   "homepage": "https://github.com/aam198/movie-info-app#readme",
   "dependencies": {
     "axios": "^0.26.0",
-    "express": "^4.17.3",
-    "netlify-lambda": "^2.0.15"
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
