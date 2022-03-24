@@ -1,7 +1,8 @@
+const search = document.getElementById('search');
+const form = document.getElementById('form');
 
 // Used https://www.themoviedb.org/documentation/api/discover to find endpoint for What are the most popular movies
 
-// const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query="`;
 
 const fetchMovies = async() => 
   await (await fetch('/.netlify/functions/getmovies')).json();
@@ -13,7 +14,6 @@ const fetchMovies = async() =>
 
     data.results.forEach((movie) => {
       console.log(movie)
-      // main.innerHTML = ''; 
       //Destructing to pull out data from movie object into individual variables
      const { title, overview, poster_path, vote_average  } = movie; 
     
@@ -44,15 +44,11 @@ const fetchMovies = async() =>
 
 
 const showMovies = async() => {
-  const response = await fetch('/.netlify/functions/getmovies')
-  const data = await response.json()
+  const response = await fetch('/.netlify/functions/searchmovies.js')
+  const search = await search.json()
   
   console.log(data.response)
-  // sending the array to showMovies
-      showMovies(data.results)
-  
-  const search = document.getElementById('search');
-  const form = document.getElementById('form');
+ 
   // To make sure main page is cleared before search results show 
   main.innerHTML = ''; 
 
