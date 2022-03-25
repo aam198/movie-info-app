@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
+    "prebuild":"echo $API_KEY",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
