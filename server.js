@@ -15,13 +15,19 @@ const app = express()
 app.use(express.static('public'))
 
 
-// let serverURL;
-// fetch(".netlify/functions/api")
-// .then(response => response.json())
-// .then(json => {
-//   serverURL = json.api
-//   console.log(serverURL)
-// })
+app.get('.netlify/functions/api', (req, res) => {
+  axios.get(api)
+  .then(response => {res.json(response.data)})
+   .then(json => {
+   const serverURL = json.api
+    console.log(json.api, serverURL)
+  })
+  .catch(error => {
+    console.log("error:", error)
+  })
+  
+})
+
 
 
 app.get('/movies', (req, res) => {
@@ -50,4 +56,5 @@ app.get('/search', (req, res) => {
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+
 
