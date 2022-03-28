@@ -15,21 +15,6 @@ const app = express()
 app.use(express.static('public'))
 
 
-app.get('.netlify/functions/api', (req, res) => {
-  axios.get(api)
-  .then(response => {res.json(response.data)})
-   .then(json => {
-   const serverURL = json.api
-    console.log(json.api, serverURL)
-  })
-  .catch(error => {
-    console.log("error:", error)
-  })
-  
-})
-
-
-
 app.get('/movies', (req, res) => {
   axios.get(API_URL)
     .then(response => {res.json(response.data)})
