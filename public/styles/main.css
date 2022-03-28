@@ -125,7 +125,7 @@ header .search::placeholder{
 
 .search:focus-visible {
   text-align: left;
-  width: 40rem;
+  width: 30rem;
   outline: 2px solid #fa9d8d;
   background-color: var(--primary-color);
   border: 0;
@@ -232,8 +232,11 @@ main {
    line-height: 1.6;
 }
 /* Anything under 550 px */
-@media(max-width: 550px){
+@media(max-width: 650px){
   header .search {
     width: 200px;
+  }
+  header .search:focus-visible{
+    width: 250px;
   }
 }
